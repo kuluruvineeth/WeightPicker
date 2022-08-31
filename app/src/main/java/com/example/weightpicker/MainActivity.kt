@@ -13,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.example.weightpicker.ui.theme.WeightPickerTheme
 
 class MainActivity : ComponentActivity() {
@@ -23,8 +24,11 @@ class MainActivity : ComponentActivity() {
                 .fillMaxSize()
             ){
                 Scale(
+                    style = ScaleStyle(
+                        scaleWidth = 150.dp
+                    ),
                     modifier = Modifier
-                        .fillMaxWidth()
+                        .fillMaxSize()
                         .align(Alignment.Center)
                 ){
 
