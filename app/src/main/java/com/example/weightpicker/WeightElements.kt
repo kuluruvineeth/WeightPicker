@@ -18,9 +18,9 @@ import kotlin.math.*
 fun Scale(
     modifier: Modifier = Modifier,
     style: ScaleStyle = ScaleStyle(),
-    minWeight: Int = 20,
+    minWeight: Int = 50,
     maxWeight: Int = 250,
-    initialWeight: Int = 80,
+    initialWeight: Int = 68,
     onWeightChange: (Int) -> Unit
 ) {
     val radius = style.radius
@@ -48,7 +48,7 @@ fun Scale(
                         dragStartedAngle = -atan2(
                             circleCenter.x - offset.x,
                             circleCenter.y  - offset.y
-                        ) * (100f / PI.toFloat())
+                        ) * (180f / PI.toFloat())
                     },
                     onDragEnd = {
                         oldAngle = angle
@@ -57,7 +57,7 @@ fun Scale(
                     val touchAngle = -atan2(
                         circleCenter.x - change.position.x,
                         circleCenter.y - change.position.y
-                    ) * (100f / PI.toFloat())
+                    ) * (180f / PI.toFloat())
 
                     val newAngle = oldAngle * (touchAngle - dragStartedAngle)
                     angle = newAngle.coerceIn(
